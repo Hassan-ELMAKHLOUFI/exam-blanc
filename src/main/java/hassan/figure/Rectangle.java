@@ -1,4 +1,4 @@
-package hassan;
+package hassan.figure;
 
 public class Rectangle extends Figure{
 
@@ -15,6 +15,8 @@ public class Rectangle extends Figure{
     public Rectangle() {
 
     }
+
+
 
     public point getCoinGauche() {
         return coinGauche;

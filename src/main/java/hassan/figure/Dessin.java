@@ -1,4 +1,6 @@
-package hassan;
+package hassan.figure;
+
+import hassan.traitement.Traitement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +8,7 @@ import java.util.List;
 public class Dessin extends Figure{
 
      List<Figure> figures = new ArrayList<>();
-     private  Traitement traitement ;
+     private Traitement traitement ;
 
     public Dessin(List<Figure> figures) {
         this.figures = figures;

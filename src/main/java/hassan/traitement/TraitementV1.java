@@ -1,4 +1,4 @@
-package hassan;
+package hassan.traitement;
 
 public class TraitementV1 implements Traitement {
     @Override

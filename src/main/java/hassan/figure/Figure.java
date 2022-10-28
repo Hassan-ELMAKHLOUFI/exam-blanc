@@ -1,4 +1,7 @@
-package hassan;
+package hassan.figure;
+
+import hassan.parametrage.ObjetParametrage;
+import hassan.parametrage.ObjetParametrageImpl;
 
 public abstract class Figure
 {

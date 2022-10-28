@@ -1,4 +1,6 @@
-package hassan;
+package hassan.parametrage;
+
+import hassan.figure.Figure;
 
 import java.util.List;
 

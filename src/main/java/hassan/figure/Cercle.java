@@ -1,4 +1,6 @@
-package hassan;
+package hassan.figure;
+
+import hassan.traitement.Traitement;
 
 public class Cercle extends Figure{
 
@@ -17,7 +19,7 @@ public class Cercle extends Figure{
     }
     @Override
     public double perimetre() {
-        return rayon;
+        return rayon*3.14;
     }
 
     @Override

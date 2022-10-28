@@ -1,4 +1,4 @@
-package hassan;
+package hassan.figure;
 
 public class point {
      int X ;
