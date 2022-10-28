@@ -1,0 +1,88 @@
+@startuml
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Cercle {
+  - centre: point
+  - traitement: Traitement
+  - rayon: double
+  + perimetre(): double
+  + dessigner(): void
+  + traiter(): void
+  + surface(): double
+  + afficher(): void
+}
+class Figure {
+  ~ epaisseur: int
+  ~ couleurRemp: int
+  ~ couleurCout: int
+  ~ objetParametrage: ObjetParametrage
+  + perimetre(): double
+  + update(ObjetParametrage): void
+  + dessigner(): void
+  + afficher(): void
+  + surface(): double
+  + traiter(): void
+}
+class Groupe {
+  ~ figures: List<Figure>
+  - traitement: Traitement
+  + ajouterDessin(Figure): void
+  + SupprimerDessin(Figure): void
+
+}
+interface ObjetParametrage << interface >> {
+  + removeFigure(Figure): void
+  + addFigure(Figure): void
+  + notifyFigures(): void
+  + addAllFigures(List<Figure>): void
+}
+class ObjetParametrageImpl {
+  - couleurRemp: int
+  - couleurCout: int
+  ~ figures: List<Figure>
+  - epaisseur: int
+  + addAllFigures(List<Figure>): void
+  + addFigure(Figure): void
+  + removeFigure(Figure): void
+  + notifyFigures(): void
+
+}
+class Rectangle {
+  - coinGauche: point
+  ~ traitement: Traitement
+  - L: double
+  - H: double
+
+}
+interface Traitement << interface >> {
+  + traiter(): void
+}
+class TraitementV1 {
+  + traiter(): void
+}
+class TraitementV2 {
+  + traiter(): void
+}
+class point {
+  ~ Y: int
+  ~ X: int
+}
+
+Cercle---^  Figure
+Cercle             "1" *-[#595959,plain]-> "\n1" Traitement
+Cercle            "1" *-[#595959,plain]-> "\n1" point
+Cercle          -[#595959,dashed]->  point                : ""
+Figure               "1" *-[#595959,plain]-> "\n1" ObjetParametrage
+Groupe            -[#000082,plain]-^  Figure
+Groupe               "1" *-[#595959,plain]-> "\n*" Figure
+Groupe               "1" *-[#595959,plain]-> "\n1" Traitement
+ObjetParametrageImpl "1" *-[#595959,plain]-> "\n*" Figure
+ObjetParametrageImpl  -[#008200,dashed]-^  ObjetParametrage
+Rectangle             -[#000082,plain]-^  Figure
+Rectangle            "1" *-[#595959,plain]-> "\n1" Traitement
+Rectangle            "1" *-[#595959,plain]-> "\n1" point
+TraitementV1          -[#008200,dashed]-^  Traitement
+TraitementV2          -[#008200,dashed]-^  Traitement
+@enduml
