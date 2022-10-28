@@ -12,4 +12,4 @@
 
 ## <span style="color: red"> Pour l'objet de parametrage et le figure j'ai utilise le pattern observer</span>
 
-![](screens/observer.png)
+![](screens/strategy.png)
