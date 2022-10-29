@@ -1,6 +1,8 @@
 package hassan.figure;
 
-public class point {
+import java.io.Serializable;
+
+public class point  implements Serializable {
      int X ;
      int Y ;
 

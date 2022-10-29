@@ -6,9 +6,11 @@ import hassan.parametrage.ObjetParametrageImpl;
 import hassan.traitement.Traitement;
 import hassan.traitement.TraitementV1;
 
+import java.io.IOException;
+
 public class Application {
 
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Dessin dessin = new Dessin();
 
@@ -38,7 +40,7 @@ public class Application {
         dessin.setTraitement(traitement);
         dessin.traiter();
 
-
+        dessin.serialiser("./test");
         dessin.afficher();
 
 

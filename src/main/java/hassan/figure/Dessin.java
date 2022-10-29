@@ -2,10 +2,11 @@ package hassan.figure;
 
 import hassan.traitement.Traitement;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dessin extends Figure{
+public class Dessin extends Figure implements Serializable {
 
      List<Figure> figures = new ArrayList<>();
      private Traitement traitement ;
@@ -73,5 +74,14 @@ public class Dessin extends Figure{
         for (int i = 0; i < figures.size(); i++) {
             figures.get(i).afficher();
         }
+    }
+
+    public void serialiser(String filePath) throws IOException {
+        File file = new File(filePath);
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(this.getFigures());
+        objectOutputStream.close();
+        fileOutputStream.close();
     }
 }

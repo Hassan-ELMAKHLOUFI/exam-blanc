@@ -1,6 +1,8 @@
 package hassan.figure;
 
-public class Rectangle extends Figure{
+import java.io.Serializable;
+
+public class Rectangle extends Figure implements Serializable {
 
     private point coinGauche =new point();
 

@@ -2,7 +2,9 @@ package hassan.figure;
 
 import hassan.traitement.Traitement;
 
-public class Cercle extends Figure{
+import java.io.Serializable;
+
+public class Cercle extends Figure implements Serializable {
 
     private point centre =new point();
     private double rayon=2 ;
